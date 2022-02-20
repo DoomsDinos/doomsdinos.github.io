@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="utf-8" />
+    <title>DOOMSDINOS</title>
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-title" content="App name" />
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+	<link rel="shortcut icon" href="./DOOMS_DINOS_VIGNETTE_2.png" type="image/png" />
+	<link rel="stylesheet" href="./index.css" type="text/css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
+
+	<script src="https://randojs.com/1.0.0.js"></script>
+	<script>
+		function js(){
+			function setBG(color1, color2){
+				document.getElementsByTagName("body")[0].style["background"] = `linear-gradient(${color1}, ${color2})`;
+				document.getElementsByTagName("body")[0].style["background-color"] = color1; 
+			}
+
+			// setBG("#121430", "#ffaa78");
+
+			//  Background
+			const nb_bg = rando(0, 100);
+
+			if ( 0 <= nb_bg && nb_bg < 25){ setBG("#51B1EE", "#ffaa78"); } else // blue -> orange
+
+            if (25 <= nb_bg && nb_bg < 50){ setBG("#121430", "#ffaa78"); } else // dark blue -> orange
+
+            if (50 <= nb_bg && nb_bg < 75){ setBG("#121430", "#51B1EE"); } else // dark blue -> blue
+
+			{ setBG("blue", "cyan"); }
+
+			// Dino
+			const nb_dino = rando(0, 100);
+			if ( 0 <= nb_dino && nb_dino < 25){ document.getElementById("dinoimg").src = "./images/dinos/SLEEPING-DINO-V3.gif"; } else
+            if (25 <= nb_dino && nb_dino < 50){ document.getElementById("dinoimg").src = "./images/dinos/SLEEPING-elec-DINO.gif"; } else
+            if (50 <= nb_dino && nb_dino < 75){ document.getElementById("dinoimg").src = "./images/dinos/SLEEPING-LEAF-DINO.gif"; } else
+			{ document.getElementById("dino").src = "./images/dinos/SLEEPING-water-DINO.gif"; }
+
+			// Title
+			const titles = ["69M years in the making", "DoomsDinos are Dinomite!!", "Did You Know: We call those giant stones falling down from the sky asteroids. They are not safe for life.", "Did You Know: DoomsDinos only eat vegetables", "Did You Know: The Dino sleeps so well that its bubble can explode", "Did You Know: The Dino sleeping here may change depending on the time of the day", "Did You Know: DoomsDinos would love humans. If only they weren't 69 million years apart...", "Cute Sleepy Dino UwU", "EAT YOUR VEGGIES", "A good Dino, you must be", "DOOMSDINOSDOOMSDINOSDOOMSDINOSDOOMSDINOSDOOMSDINOSDOOMSDINOSDOOMSDINOSDOOMSDINOSDOOMSDINOS", "Roadmaps? Where we’re going, we don’t need roads.", "Spared no expense!", "God creates dinosaurs. God destroys dinosaurs. God creates man. Man destroys God. Man creates DoomsDinos.", "Keep absolutely still... Its vision is based on movements"]
+
+			const nb_title = rando(0, 100);
+			if ( 0 <= nb_title && nb_title < 10){ document.getElementById("thetitle").innerHTML = titles[0]; } else // common
+			if ( 10 <= nb_title && nb_title < 20){ document.getElementById("thetitle").innerHTML = titles[1]; } else // common
+			if ( 20 <= nb_title && nb_title < 30){ document.getElementById("thetitle").innerHTML = titles[2]; } else // common
+			if ( 30 <= nb_title && nb_title < 40){ document.getElementById("thetitle").innerHTML = titles[3]; } else // common
+			if ( 40 <= nb_title && nb_title < 50){ document.getElementById("thetitle").innerHTML = titles[4]; } else // common
+			if ( 50 <= nb_title && nb_title < 57){ document.getElementById("thetitle").innerHTML = titles[5]; } else  // uncommon
+			if ( 57 <= nb_title && nb_title < 64){ document.getElementById("thetitle").innerHTML = titles[6]; } else  // uncommon
+			if ( 64 <= nb_title && nb_title < 71){ document.getElementById("thetitle").innerHTML = titles[7]; } else  // uncommon
+			if ( 71 <= nb_title && nb_title < 78){ document.getElementById("thetitle").innerHTML = titles[8]; } else  // uncommon
+			if ( 78 <= nb_title && nb_title < 85){ document.getElementById("thetitle").innerHTML = titles[9]; } else  // uncommon
+			if ( 85 <= nb_title && nb_title < 88){ document.getElementById("thetitle").innerHTML = titles[10]; } else  // rare
+			if ( 88 <= nb_title && nb_title < 91){ document.getElementById("thetitle").innerHTML = titles[11]; } else  // rare
+			if ( 91 <= nb_title && nb_title < 94){ document.getElementById("thetitle").innerHTML = titles[12]; } else  // rare
+			if ( 94 <= nb_title && nb_title < 97){ document.getElementById("thetitle").innerHTML = titles[13]; } else  // rare
+			{ document.getElementById("thetitle").innerHTML = titles[14]; } // rare
+
+
+
+			function resize() {
+				const el = document.getElementById('thetitle');
+				var length = el.innerHTML.length;
+				// var length = document.getElementById('thetitle').innerHTML.length;
+
+
+				if(length > 50 && window.innerWidth < window.innerHeight) {
+					// resize long + portrait
+					el.style.fontSize = "3vh";
+				}
+				else {
+					el.style.fontSize = "4vh";
+				}
+			}
+
+			// resize(document.getElementById('thetitle'));
+			resize();
+
+		}
+
+	</script>
+
+
+</head>
+
+<body onload="js();">
+
+	<div class="parallax_wrapper">
+
+		<div class="parallax_layer" id="logo">
+			<img src="./images/9.png">
+		</div>
+
+		<div class="parallax_layer" id="backclouds">
+			<img src="./images/2.png">
+		</div>
+
+		<div class="parallax_layer" id="volcano">
+			<img src="./images/3.png">
+		</div>
+
+		<div class="parallax_layer" id="title">
+			<h1 id="thetitle"></h1>
+		</div>
+
+		<div class="parallax_layer" id="frontclouds">
+			<img src="./images/4.png">
+		</div>
+
+		<div class="parallax_layer" id="ground">
+			<img src="./images/5.png">
+		</div>
+
+		<div class="parallax_layer" id="dino">
+			<img id="dinoimg" src="./images/dinos/SLEEPING-water-DINO.gif">
+		</div>
+
+		<div class="parallax_layer" id="treesmall">
+			<img src="./images/6.png">
+		</div>
+
+		<div class="parallax_layer" id="treesmedium">
+			<img src="./images/7.png">
+		</div>
+
+		<div id="largetrees">
+			<img src="./images/8.png">
+		</div>
+	
+	</div>
+</body>
+</html>
